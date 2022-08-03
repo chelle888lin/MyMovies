@@ -146,6 +146,7 @@ public class ModifyMovie extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         DBHelper dbh = new DBHelper(ModifyMovie.this);
                         dbh.deleteMovie(data.getId());
+                        finish();
                     }
                 });
                 myBuilder.setNegativeButton("Cancel", null);
@@ -166,8 +167,7 @@ public class ModifyMovie extends AppCompatActivity {
                 myBuilder.setPositiveButton("Discard", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent i = new Intent(ModifyMovie.this, ShowMovie.class);
-                        startActivity(i);
+                        finish();
                     }
                 });
                 myBuilder.setNegativeButton("Cancel", null);
